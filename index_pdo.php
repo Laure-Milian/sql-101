@@ -6,9 +6,10 @@ $bdd = new PDO(
 // $reponse = $bdd->query('SELECT * FROM mes_chaussettes');
 
 $req = $bdd->prepare(
-	'SELECT * FROM mes_chaussettes WHERE couleur = ?');
+	'SELECT * FROM mes_chaussettes WHERE couleur = :couleur AND pointure > :pointure');
 $req->execute(
-	array('rouge')
+	array('couleur' => 'rouge',
+	'pointure' => 40)
 );
 
 ?>
