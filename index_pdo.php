@@ -5,12 +5,27 @@ $bdd = new PDO(
 
 // $reponse = $bdd->query('SELECT * FROM mes_chaussettes');
 
+// $req2 = $bdd->prepare('
+// 	INSERT INTO mes_chaussettes(couleur, pointure, temp_lavage, description, date_lavage)
+// 	VALUES (:couleur, :pointure, :temp_lavage, :description, :date_lavage)'
+// );
+
+// $req2->execute(array(
+// 	'couleur' => 'rouge',
+// 	'pointure' => 44,
+// 	'temp_lavage' => 60,
+// 	'description' => 'jolie chaussette',
+// 	'date_lavage' => '2014-01-01'
+// 	));
+
 $req = $bdd->prepare(
 	'SELECT * FROM mes_chaussettes WHERE couleur = :couleur AND pointure > :pointure');
+
 $req->execute(
-	array('couleur' => 'rouge',
-	'pointure' => 40)
+	array('couleur' => $_GET['couleur'],
+	'pointure' => $_GET['pointure'])
 );
+
 
 ?>
 

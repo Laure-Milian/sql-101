@@ -1,0 +1,12 @@
+{
+    "name": "simplon/66_sql101",
+    "authors": [
+        {
+            "name": "Laure",
+            "email": "laure.milian@gmail.com"
+        }
+    ],
+    "require": {
+        "j4mie/idiorm": "^1.5"
+    }
+}
