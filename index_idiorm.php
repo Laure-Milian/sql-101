@@ -19,8 +19,10 @@ $chaussettes = ORM::for_table('mes_chaussettes')->where('couleur', 'rouge')
 	</tr>
 
 
-	<?php foreach ($chaussettes as $chaussette) : ?>
-
+	<?php foreach ($chaussettes as $chaussette) : 
+		$chaussette->couleur = 'rose';
+		$chaussette->save();
+	?>
 		<tr>
 			<td><?= $chaussette->id ?></td>
 			<td><?= $chaussette->couleur ?></td>
