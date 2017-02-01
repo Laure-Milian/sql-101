@@ -1,11 +1,10 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
-//require_once 'idiorm.php';
 ORM::configure('mysql:host=localhost;dbname=mon_armoire');
 ORM::configure('username', 'root');
 ORM::configure('password', 'simplonco');
 
-$chaussettes = ORM::for_table('mes_chaussettes')
+$chaussettes = ORM::for_table('mes_chaussettes')->where('couleur', 'rouge')
 ->find_many();
 ?>
 
